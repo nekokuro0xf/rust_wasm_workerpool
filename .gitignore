@@ -3,5 +3,5 @@
 Cargo.lock
 bin/
 wasm-pack.log
-pkg/node_modules
-pkg/snippets
+/pkg/node_modules
+/pkg/snippets
