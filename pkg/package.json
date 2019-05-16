@@ -1,0 +1,15 @@
+{
+  "name": "wasm-thread",
+  "collaborators": [
+    "nekokuro0xf <xiaohei0xf@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasm_thread_bg.wasm",
+    "wasm_thread.js",
+    "wasm_thread.d.ts"
+  ],
+  "module": "wasm_thread.js",
+  "types": "wasm_thread.d.ts",
+  "sideEffects": "false"
+}
