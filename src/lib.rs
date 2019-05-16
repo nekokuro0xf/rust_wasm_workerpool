@@ -69,7 +69,6 @@ impl WorkPool{
             console.log(@{ptr_to_send})
         }
 
-
         worker.post_message(&ptr_to_send2)?;
         worker.set_onmessage(Some(callback.as_ref().unchecked_ref()));
         worker.set_onerror(Some(callback.as_ref().unchecked_ref()));

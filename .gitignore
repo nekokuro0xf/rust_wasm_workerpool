@@ -5,3 +5,4 @@ bin/
 wasm-pack.log
 /pkg/node_modules
 /pkg/snippets
+/pkg/package.json
