@@ -62,14 +62,13 @@ impl WorkPool{
 
         let worker = Worker::new("./worker.js")?;
 
-    
         let send2 = Array::new();
         send2.push([2,3,4,5]);
         send.push("fuck");
 
 
         js!{
-            console.log(@{send2.index()})
+            console.log(@{send2})
         }
 
 
