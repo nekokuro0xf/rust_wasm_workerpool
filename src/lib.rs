@@ -33,7 +33,7 @@ pub fn fuck(){
 #[wasm_bindgen]
 pub struct WorkPool {
     workers:Vec<Worker>,
-    callback:Closure<dyn FnMut(MessageEvent) -> Result<(), JsValue>>,
+    // callback:Closure<dyn FnMut(MessageEvent) -> Result<(), JsValue>>,
 }
 
 #[wasm_bindgen]
@@ -55,10 +55,10 @@ impl WorkPool{
                 console.log("callback get Data", @{a},@{b},@{c})
             }
 
-            let message = "Hello, callback!";
-            js!{
-                console.log("callbck",@{message})
-            }
+            // let message = "Hello, callback!";
+            // js!{
+            //     console.log("callbck",@{message})
+            // }
             Ok(())
         }) as Box<dyn FnMut(MessageEvent) -> Result<(), JsValue>>);
 
@@ -67,7 +67,7 @@ impl WorkPool{
         let worker = Worker::new("./worker.js")?;
 
         let ptr_to_send = Arc::into_raw( Arc::new(Mutex::new(vec![0; 4 * 1024]))) as u32;
-        let ptr_to_send2 = JsValue::from(ptr_to_send);
+        let ptr_to_send2 = JsValue::from("From Rust");
 
         js!{
             console.log(@{ptr_to_send})
@@ -78,6 +78,7 @@ impl WorkPool{
         worker.set_onerror(Some(callback.as_ref().unchecked_ref()));
         workers.push(worker);
 
-        Ok(WorkPool { workers, callback })
+        callback.forget();
+        Ok(WorkPool { workers })
     }
 }

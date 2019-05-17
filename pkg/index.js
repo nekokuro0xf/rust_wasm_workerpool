@@ -7,7 +7,7 @@ console.log(wasm_bindgen)
 
 init('./wasm_thread_bg.wasm').then((wasm)=>{
   console.log(wasm,WorkPool)
-  wasm.workpool_createWorker()
+  // wasm.workpool_createWorker()
 })
 
 

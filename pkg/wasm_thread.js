@@ -1,6 +1,5 @@
 import { __cargo_web_snippet_0326c402a09df06eb668ad14bff6431717298466 } from './snippets/wasm-thread-cecb06797fc8626d/inline0.js';
 import { __cargo_web_snippet_4d3d71d2849c3ecc535f0d5fa22c11d269d0907b } from './snippets/wasm-thread-cecb06797fc8626d/inline2.js';
-import { __cargo_web_snippet_8386e4e681ee465c720590a6869cd26bbc72cba3 } from './snippets/wasm-thread-cecb06797fc8626d/inline3.js';
 import { wasm_bindgen_initialize } from './snippets/stdweb-46e48418af82516d/inline250.js';
 import { __cargo_web_snippet_80d6d56760c65e49b7be8b6b01c1ea861b046bf0 } from './snippets/stdweb-46e48418af82516d/inline439.js';
 import { __cargo_web_snippet_72fc447820458c720c68d0d8e078ede631edd723 } from './snippets/stdweb-46e48418af82516d/inline442.js';
@@ -62,12 +61,6 @@ function __wbg_cargowebsnippet4d3d71d2849c3ecc535f0d5fa22c11d269d0907b_3b0235876
 }
 
 __exports.__wbg_cargowebsnippet4d3d71d2849c3ecc535f0d5fa22c11d269d0907b_3b02358766c27519 = __wbg_cargowebsnippet4d3d71d2849c3ecc535f0d5fa22c11d269d0907b_3b02358766c27519;
-
-function __wbg_cargowebsnippet8386e4e681ee465c720590a6869cd26bbc72cba3_75402ed9de897010(arg0, arg1) {
-    return __cargo_web_snippet_8386e4e681ee465c720590a6869cd26bbc72cba3(takeObject(arg0), arg1);
-}
-
-__exports.__wbg_cargowebsnippet8386e4e681ee465c720590a6869cd26bbc72cba3_75402ed9de897010 = __wbg_cargowebsnippet8386e4e681ee465c720590a6869cd26bbc72cba3_75402ed9de897010;
 
 function addHeapObject(obj) {
     if (heap_next === heap.length) heap.push(heap.length + 1);
@@ -199,9 +192,9 @@ function __wbg_cargowebsnippete9638d6405ab65f78daf4a5af9c9de14ecf1e2ec_01dfb6820
 
 __exports.__wbg_cargowebsnippete9638d6405ab65f78daf4a5af9c9de14ecf1e2ec_01dfb68202885677 = __wbg_cargowebsnippete9638d6405ab65f78daf4a5af9c9de14ecf1e2ec_01dfb68202885677;
 
-function __wbindgen_number_new(i) { return addHeapObject(i); }
+function __wbindgen_string_new(p, l) { return addHeapObject(getStringFromWasm(p, l)); }
 
-__exports.__wbindgen_number_new = __wbindgen_number_new;
+__exports.__wbindgen_string_new = __wbindgen_string_new;
 
 function __wbindgen_number_get(n, invalid) {
     let obj = getObject(n);
@@ -290,9 +283,9 @@ function __wbindgen_throw(ptr, len) {
 
 __exports.__wbindgen_throw = __wbindgen_throw;
 
-function __wbindgen_closure_wrapper37(a, b, _ignored) {
-    const f = wasm.__wbg_function_table.get(8);
-    const d = wasm.__wbg_function_table.get(9);
+function __wbindgen_closure_wrapper63(a, b, _ignored) {
+    const f = wasm.__wbg_function_table.get(7);
+    const d = wasm.__wbg_function_table.get(8);
     const cb = function(arg0) {
         this.cnt++;
         let a = this.a;
@@ -314,9 +307,9 @@ function __wbindgen_closure_wrapper37(a, b, _ignored) {
     return addHeapObject(real);
 }
 
-__exports.__wbindgen_closure_wrapper37 = __wbindgen_closure_wrapper37;
+__exports.__wbindgen_closure_wrapper63 = __wbindgen_closure_wrapper63;
 
-function __wbindgen_closure_wrapper1509(a, b, _ignored) {
+function __wbindgen_closure_wrapper1507(a, b, _ignored) {
     const f = wasm.__wbg_function_table.get(41);
     const d = wasm.__wbg_function_table.get(42);
     const cb = function(arg0, arg1) {
@@ -337,9 +330,9 @@ real.original = cb;
 return addHeapObject(real);
 }
 
-__exports.__wbindgen_closure_wrapper1509 = __wbindgen_closure_wrapper1509;
+__exports.__wbindgen_closure_wrapper1507 = __wbindgen_closure_wrapper1507;
 
-function __wbindgen_closure_wrapper1511(a, b, _ignored) {
+function __wbindgen_closure_wrapper1509(a, b, _ignored) {
     const f = wasm.__wbg_function_table.get(39);
     const d = wasm.__wbg_function_table.get(40);
     const cb = function(arg0) {
@@ -360,7 +353,7 @@ real.original = cb;
 return addHeapObject(real);
 }
 
-__exports.__wbindgen_closure_wrapper1511 = __wbindgen_closure_wrapper1511;
+__exports.__wbindgen_closure_wrapper1509 = __wbindgen_closure_wrapper1509;
 
 function freeWorkPool(ptr) {
 
@@ -380,7 +373,7 @@ export class WorkPool {
     * @returns {}
     */
     constructor() {
-        this.ptr = wasm.workpool_createWorker();
+        this.ptr = wasm.workpool_create_worker();
     }
 }
 
