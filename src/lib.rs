@@ -69,10 +69,6 @@ impl WorkPool{
         let ptr_to_send = Arc::into_raw( Arc::new(Mutex::new(vec![0; 4 * 1024]))) as u32;
         let ptr_to_send2 = JsValue::from("From Rust");
 
-        js!{
-            console.log(@{ptr_to_send})
-        }
-
         worker.post_message(&ptr_to_send2)?;
         worker.set_onmessage(Some(callback.as_ref().unchecked_ref()));
         worker.set_onerror(Some(callback.as_ref().unchecked_ref()));
